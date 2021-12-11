@@ -9,6 +9,7 @@ use yii\bootstrap4\Breadcrumbs;
 use yii\bootstrap4\Html;
 use yii\bootstrap4\Nav;
 use yii\bootstrap4\NavBar;
+use app\components\LanguageDropdown;
 
 AppAsset::register($this);
 ?>
@@ -51,7 +52,8 @@ AppAsset::register($this);
                 )
                 . Html::endForm()
                 . '</li>'
-            )
+            ),
+            ['label' => LanguageDropdown::label(Yii::$app->language), 'items' => LanguageDropdown::widget()]
         ],
     ]);
     NavBar::end();
